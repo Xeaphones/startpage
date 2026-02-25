@@ -49,6 +49,7 @@ class Search extends Component {
       }
 
       #search div {
+          margin: 5em;
           position: relative;
           width: 100%;
       }
@@ -244,6 +245,15 @@ class Search extends Component {
    */
   deactivate() {
     this.refs.search.classList.remove('active');
+  }
+
+  /**
+   * Navigate to a URL with _blank target
+   * @param {string} url - The URL to navigate to
+   * @returns {void}
+   */
+  navigateToUrl(url) {
+    window.open(url, '_blank');
   }
 
   /**
@@ -449,7 +459,7 @@ class Search extends Component {
     if (index >= 0 && index < this.suggestions.length) {
       const suggestion = this.suggestions[index];
       this.saveToLocalHistory(suggestion.url, suggestion.title);
-      window.location = suggestion.url;
+      this.navigateToUrl(suggestion.url);
     }
   }
 
@@ -568,7 +578,7 @@ class Search extends Component {
         // Navigate directly to the URL
         const formattedUrl = this.formatUrl(fullInput);
         this.saveToLocalHistory(formattedUrl);
-        window.location = formattedUrl;
+        this.navigateToUrl(formattedUrl);
         return;
       }
 
@@ -579,7 +589,7 @@ class Search extends Component {
       }
 
       // Navigate to search results
-      window.location = engine + encodeURI(args.join(' '));
+      this.navigateToUrl(engine + encodeURI(args.join(' ')));
       return;
     }
 

@@ -8,6 +8,8 @@ const components = {
   "current-time": Clock,
   "weather-forecast": Weather,
   "tabs-list": Tabs,
+  "config-tab": ConfigTab,
+  "todo-list": Todo,
 };
 
 // Register each component as a custom element if it's not disabled

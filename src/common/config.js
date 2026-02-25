@@ -71,6 +71,8 @@ class Config {
     this.storage = new Storage("configuration");
 
     this.autoConfig();
+    // Always use the fresh palette, never from localStorage
+    this.palette = palette;
     this.setKeybindings();
     this.save();
 
@@ -130,6 +132,8 @@ class Config {
     return {
       ...this,
       defaults: undefined,
+      palette: undefined,
+      storage: undefined,
     };
   }
 

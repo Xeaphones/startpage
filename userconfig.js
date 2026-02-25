@@ -15,7 +15,32 @@ const default_configuration = {
   },
   clock: {
     format: "h:i",
+    locale: "fr-FR",
     iconColor: palette.maroon,
+  },
+  additionalClocks: [{
+    label: "NYC",
+    timezone: "America/New_York",
+    icon_color: palette.blue,
+    format: "k:i p",
+    locale: "en-US",
+  }],
+  search: {
+    engines: {
+      g: ["https://google.com/search?q=", "Google"],
+      y: ["https://youtube.com/results?search_query=", "YouTube"],
+      d: ["https://duckduckgo.com/?q=", "DuckDuckGo"],
+      r: ["https://www.reddit.com/search/?q=", "Reddit"],
+      w: ["https://en.wikipedia.org/wiki/", "Wikipedia"],
+      s: ["https://stackoverflow.com/search?q=", "StackOverflow"],
+      p: ["https://www.pinterest.com/search/pins/?q=", "Pinterest"],
+    },
+    default: "g",
+  },
+  keybindings: {
+    "s": "search-bar",
+    "c": "config-tab",
+    "t": 'todo-list',
   },
   disabled: [],
   fastlink: "https://github.com/Xeaphones",
@@ -96,7 +121,7 @@ const default_configuration = {
     },
     {
       name: "dev",
-      background_url: "src/img/banners/banner_07.gif",
+      background_url: "src/img/banners/banner_06.gif",
       categories: [
         {
           name: "development",
@@ -183,7 +208,7 @@ const default_configuration = {
     },
     {
       name: "chi ll",
-      background_url: "src/img/banners/banner_08.gif",
+      background_url: "src/img/banners/banner_18.gif",
       categories: [
         {
           name: "media",
